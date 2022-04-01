@@ -85,8 +85,9 @@ export const Product=()=> {
 {/* ////////////////////////////-------fixBox---------------//////// */}
 
 
-        <div className='fixBox'>
+        <div className='fixBox FixB' >
             <div className='innerFixBox'>
+                <div className='Ftop2lines'>
                 <div className='flex FTH'>
                      <h1 className='FT1'> ₹455 </h1>
                      <span className='FT2'> ₹3,499 </span>
@@ -95,6 +96,7 @@ export const Product=()=> {
                 <div className='red'>
                     <AccessAlarmsIcon/>
                 <span className='bold'>5 hours</span> left at this price!
+                </div>
                 </div>
 
                 <button className='gotocartBtn'>Go to cart</button>
@@ -336,7 +338,7 @@ export const Product=()=> {
            {/* ========================================================== */}
 {/* ----------------------------------------------------------- */}
 
-           <Accordion>
+            <Accordion>
                
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -444,7 +446,7 @@ export const Product=()=> {
         </AccordionSummary>
       </Accordion>
 
-
+ 
 
 
 
