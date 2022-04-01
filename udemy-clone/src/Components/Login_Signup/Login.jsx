@@ -21,12 +21,15 @@ const Login = () => {
 
                 <button id = "login_input">Log in</button>
                 </div>
-                  <span className='forgot_pw'>or </span>
+                  
+                  <div className='forgot_pws'>           
+                      <span className='forgot_pw'>or </span>
                    <a href = "#">Forgot Password</a>
                     
                     <div className='diff_acct'>
                    <a href="#">Log in</a>to a <a href="#">different account</a>
-                   </div>
+                   </div>  </div>
+ 
 
                    <div className='login_org'>
                        <p>Don't have an account? <span><a href="#">Sign up</a></span></p>

@@ -53,8 +53,10 @@
   .diff_acct a{
       text-decoration: none;
   }
-  .login_org1 {
-    margin-left: 80px;
+  .login_org {
+      margin-left: 80px;
+      margin-top: 20px;
+      line-height: 25px;
   }
   .login_org a {
       text-decoration: none;
@@ -62,4 +64,8 @@
   }
   .login_org a:hover {
       color: blue;
+  }
+  .forgot_pws {
+    line-height: 25px;
+
   }

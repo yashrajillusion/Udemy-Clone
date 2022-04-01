@@ -3,10 +3,8 @@ import "./App.css";
 import { Landigpage } from "./Components/LandingPage/Landin";
 // import Payment from "./Components/Payment/Payment";
 // import ".Components/Header/header.css";
-// import Login from "./Components/Login_Signup/Login";
-import Signup from "./Components/Login_Signup/Signup";
-
-
+import Login from "./Components/Login_Signup/Login";
+// import Signup from "./Components/Login_Signup/Signup";
 
 import Wishlist from "./Components/Wishlist/Wishlist";
 
@@ -16,8 +14,8 @@ function App() {
       {/* <Landigpage /> */}
       {/* <Payment /> */}
       {/* <Wishlist /> */}
-      {/* <Login /> */}
-      <Signup />
+      <Login />
+      {/* <Signup /> */}
     </div>
   );
 }
