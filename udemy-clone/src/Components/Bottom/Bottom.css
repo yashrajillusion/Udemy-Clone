@@ -1,0 +1,105 @@
+.bottomBox{
+    background-color: rgb(28, 29, 31);
+    padding: 2% 4%;
+}
+.white{
+    color: white;
+}
+.purple{
+    color: rgb(206, 192, 252);
+}
+.purple:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+}
+.Btop{
+    /* border: 1px solid rgb(12, 217, 97); */
+    height: 100px;
+}
+.Tleft{
+    width: 100%;
+    height: 80px;
+
+    /* border: 1px solid rgb(252, 34, 34);   */
+}
+
+.Tleft>h2{
+   
+    font-size: 145%;
+    text-align: left;
+    /* margin:  0 0 0 %; */
+   
+}
+.Tright{
+    margin: 1% 0 0 0%;
+    width: 80%;
+    /* border: 1px solid rgb(55, 0, 255);   */
+}
+.Tright>img{
+    padding:0  2% 0 0 ;
+    
+}
+.Mleft{
+    width: 80%;
+    text-align: left;
+    
+}
+.Mleft>ul{
+   
+    margin-left: -9%;
+    padding:  0 10%;
+}
+.Mleft>ul>li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.Mright{
+    border: 1.5px solid rgb(255, 255, 255);
+    width: 150px;
+    margin: 1.5%  0 0 15%;
+    height: 40px;
+    
+}
+.Mright:hover{
+    cursor: pointer;
+    background-color: rgb(94, 94, 94);
+}
+.Glogo{
+    width: 25px;
+    margin: 30% 55%;
+    border-radius: 50%;
+   
+}
+.Eng{
+    margin: 15% 0 0 35%;
+    
+}
+.Eleft{
+    width: 95%;
+}
+.Eleft>img{
+    width: 8%;
+    margin: 2% 0 0 -93%;
+}
+.Eleft>img:hover{
+    cursor: pointer;
+}
+.Eright>p{
+    font-size: 80%;
+    width: 180%;
+    margin-left: -50%;
+    
+}
+.hoverUnderline{
+    text-decoration: underline;
+}
+.hr{
+    background-color: rgb(184, 184, 184);
+    width: 110%;
+    margin-left: -4.5%;
+    height: 0.99px;
+}
+

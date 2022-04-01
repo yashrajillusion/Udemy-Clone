@@ -1,0 +1,56 @@
+.flex{
+    display: flex;
+    /* border: 1px solid red; */
+}
+.profileBox{
+    margin:auto ;
+
+    width: 260px ;
+    border: 1px solid grey;
+    padding: 10px;
+    line-height: 200%;
+    
+}
+.grey{
+    border: none;
+    border: 1px solid gainsboro;
+    
+}
+.hrs{
+    border: none;
+    border: 0.80px solid gainsboro;
+    width: 109.3%;
+    margin:  0 0 0 -4.6%;
+}
+.colorChange:hover{
+    color:rgb(164,53,240);
+}
+.purpalr{
+    background-color:rgb(164,53,240);
+}
+.icons{
+    margin: auto;
+    /* text-align: end; */
+    width: 20%;
+}
+.icons2{
+    margin-left: 60px;
+    /* border: 1px solid red; */
+}
+.leftPicon{
+    width: 150px;
+    /* border: 1px solid red; */
+}
+.wishicon{
+    margin: 0 0 0 160px;
+}
+.profileIcon{
+    width:70px;
+    height: 70px;
+    margin: 7%  0 0 0 ;
+    /* border:1px solid rgb(21, 175, 13) */
+}
+.ProfileName{
+    line-height: 150%;
+    margin: 2.5% 0 0 0 ;
+}
