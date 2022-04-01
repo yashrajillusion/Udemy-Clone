@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
 import "./prod.css";
 import React from "react";
+import { MultiItemCarousel } from "../MultiCarousel/MultiItemCarousel";
 // export const PopperCard = React.forwardRef(function PopperCard(props, ref) {
 
 export const ProdCard = React.forwardRef(function ProdCard(props, ref) {
@@ -155,11 +156,16 @@ export const SuggestionCard = () => {
       <div>
         <h2>Students are viewing</h2>
         <div className="prod-cont">
+          {/* <MultiItemCarousel>  */}
           <ProdCard />
           <ProdCard />
           <ProdCard />
           <ProdCard />
           <ProdCard />
+          <ProdCard />
+          <ProdCard />
+          <ProdCard />
+          {/* </MultiItemCarousel> */}
         </div>
       </div>
     </div>

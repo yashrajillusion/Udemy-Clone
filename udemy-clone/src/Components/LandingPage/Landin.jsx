@@ -126,6 +126,7 @@ const Banner = () => {
       <section>
         <SuggestionCard />
       </section>
+
       <section>
         <TechCard />
       </section>
