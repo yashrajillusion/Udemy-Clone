@@ -40,9 +40,7 @@
       margin-top: 15px;
       margin-bottom: 25px;
   }
-  #login_input:hover {
-      background-color: blue;
-  }
+  
   .forgot_pw {
       text-decoration: none;
       margin-left: 120px;

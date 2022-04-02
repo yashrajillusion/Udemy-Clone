@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 export const AUTH = "AUTH";
 export const AUTH_LOADING = "AUTH_LOADING";
 export const AUTH_ERROR = "AUTH_ERROR";
@@ -10,15 +11,18 @@ export const authLoading = (status) => ({
 });
 export const autheError = (status) => ({ type: AUTH_ERROR, payload: status });
 
-export const authFunction = (data) => (dispatch) => {
+export const authFunction = (data, URL) => (dispatch) => {
   dispatch(authLoading(true));
   axios
-    .post("http://localhost:8080/join/signup-popup", data)
+    .post(URL, data)
     .then(({ data }) => {
       dispatch(auth(data));
+      dispatch(authLoading(false));
+      dispatch(autheError(false));
+      console.log(data);
     })
     .catch((err) => {
-      console.log(err);
+      console.log(err.message);
       dispatch(autheError(true));
       dispatch(authLoading(false));
     });

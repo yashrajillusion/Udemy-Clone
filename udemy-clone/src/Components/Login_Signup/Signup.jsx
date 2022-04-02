@@ -7,6 +7,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { ColorButton } from "../ProdCard/popperprodcard";
 import { useDispatch, useSelector } from "react-redux";
 import { authFunction } from "../../Redux/login/action";
+import { Navigate } from "react-router-dom";
 
 const Signup = () => {
   const [userdata, setUser] = useState({ name: "", email: "", password: "" });
@@ -16,7 +17,10 @@ const Signup = () => {
     const { name, value } = e.target;
     setUser({ ...userdata, [name]: value });
   };
-
+  if (user.token != undefined) {
+    console.log(user._id);
+    return <Navigate to={"/"} />;
+  }
   return (
     <div>
       <div className="loginDiv">
@@ -26,7 +30,7 @@ const Signup = () => {
         <div className="login_inputDiv">
           {error ? (
             <Alert className="alert" severity="error">
-              <p>There was a problem creatin your account.</p>
+              <p>There was a problem creating your account.</p>
               <p>Check that your email address is spelled correctly</p>
             </Alert>
           ) : (
@@ -67,7 +71,8 @@ const Signup = () => {
           </button> */}
           <ColorButton
             onClick={() => {
-              dispatch(authFunction(userdata));
+              const URL = "http://localhost:8080/join/signup-popup";
+              dispatch(authFunction(userdata, URL));
             }}
             id="signup_input"
           >
