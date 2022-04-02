@@ -1,7 +1,15 @@
 import { Checkbox } from '@mui/material';
 import React from 'react';
 import "./signup.css"
-import {Header} from "../Header/Header"
+import {Header} from "../Header/Header";
+
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import PersonIcon from '@mui/icons-material/Person';
+import EmailIcon from '@mui/icons-material/Email';
+import LockIcon from '@mui/icons-material/Lock';
+import HelpIcon from '@mui/icons-material/Help';
+
 
 
 const Signup = () => {
@@ -12,11 +20,24 @@ const Signup = () => {
                <h4>Sign up Start Learning!</h4>
                <hr className='hr_line_login'></hr>
 
-               <div className='login_inputDiv'>
+              <div className='login_inputDiv'>
+
+               {/* <Box
+              component="form"
+               sx={{
+                 '& > :not(style)': { m: 1, width: '25ch' },
+               }}
+                noValidate
+                autoComplete="off">
+      <TextField id="outlined-basic" label="Full Name" variant="outlined" />
+      </Box> */}
                  <input type = "text" placeholder='Full Name' className='login_pw'></input>
                  <input type = "email" placeholder='Email' className='login_pw'></input>
                   
-                 <input type = "password" placeholder='Passward' className='login_pw'></input>
+
+                 <input type = "password" placeholder='Passward' className='login_pw'> 
+                 </input> 
+   
                    
                    <div className='checkboxDiv'>
                 <input type = "checkbox" className = "signup_checkbox"></input>
