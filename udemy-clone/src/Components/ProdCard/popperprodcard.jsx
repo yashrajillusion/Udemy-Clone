@@ -56,7 +56,7 @@ const PoperPoint = ({ text }) => {
   );
 };
 
-const ColorButton = styled(Button)(({ theme }) => ({
+export const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText(purple[500]),
   backgroundColor: "#a435f0",
   height: "2.8rem",

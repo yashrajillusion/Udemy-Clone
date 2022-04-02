@@ -23,6 +23,7 @@ router.get("/signup-popup", async (req, res) => {
 
 router.post("/signup-popup", async (req, res) => {
   try {
+    console.log(req.body);
     let new_user = await await User.findOne({ email: req.body.email })
       .lean()
       .exec();

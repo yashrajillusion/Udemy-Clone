@@ -19,7 +19,6 @@ const LightTooltip = styled(({ className, ...props }) => (
 export const Landigpage = () => {
   return (
     <>
-      <Header />
       <Banner />
     </>
   );
