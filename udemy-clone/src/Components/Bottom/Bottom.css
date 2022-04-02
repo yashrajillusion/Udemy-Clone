@@ -1,6 +1,7 @@
 .bottomBox{
     background-color: rgb(28, 29, 31);
     padding: 2% 4%;
+    font-family: sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
 }
 .white{
     color: white;
@@ -48,9 +49,13 @@
     
 }
 .Mleft>ul{
-   
+   margin-top: 3%;
     margin-left: -9%;
     padding:  0 10%;
+}
+.Mleft>ul>li{
+    list-style: none;
+    margin-top: 3%;
 }
 .Mleft>ul>li:hover{
     text-decoration: underline;
@@ -97,9 +102,9 @@
     text-decoration: underline;
 }
 .hr{
-    background-color: rgb(184, 184, 184);
+    background-color: rgb(94, 90, 90);
     width: 110%;
     margin-left: -4.5%;
-    height: 0.99px;
+    height: 0.1px;
 }
 

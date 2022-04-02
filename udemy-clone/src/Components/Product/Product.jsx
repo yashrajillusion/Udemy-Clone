@@ -35,15 +35,19 @@ import { Header } from '../Header/Header';
 
 
 export const Product=()=> {
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
+    setOpen(!open);
+  };
+  const handleClick2 = () => {
     setOpen(!open);
   };
 
   return (
     <div>
       <Header/>
+      {/* <PlayCircleFilledRoundedIcon/> */}
        <div className='BlackBox'>
           <div className='BBText'>
           <div className='flex purpal'>
@@ -127,7 +131,7 @@ export const Product=()=> {
                 <div className='training'>
                     <h3>Training 5 or more people?</h3>
                     <p>Get your team access to 6,000+ top Udemy courses anytime, anywhere.</p>
-                    <button className='buynowBtn'>Try Udemy Business</button>
+                    <button className='buynowBtn btn2'>Try Udemy Business</button>
                 </div>
             </div>
         </div>
@@ -254,7 +258,7 @@ export const Product=()=> {
                 <List sx={{ width: '100%' }}>
      
       
-                 <ListItemButton onClick={handleClick}>
+                 <ListItemButton onClick={handleClick2}>
                   
                    
                    <div className='OpenBox flex'>
@@ -335,12 +339,12 @@ export const Product=()=> {
 
            <div className='moreSection'><h5>5 more section</h5></div>
 
-           <hr />
-           <hr />
+           {/* <hr />
+           <hr /> */}
            {/* ========================================================== */}
 {/* ----------------------------------------------------------- */}
 
-            <Accordion>
+            {/* <Accordion>
                
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -357,10 +361,10 @@ export const Product=()=> {
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
         </AccordionDetails>
-      </Accordion>
+      </Accordion> */}
       {/* --------------------------------------------------------------- */}
 
-      <Accordion>
+      {/* <Accordion>
                
                <AccordionSummary
                  expandIcon={<ExpandMoreIcon />}
@@ -378,7 +382,7 @@ export const Product=()=> {
                  </Typography>
                </AccordionDetails>
              </Accordion>
-             {/* ---------------- */}
+            
              <Accordion>
                
                <AccordionSummary
@@ -401,7 +405,7 @@ export const Product=()=> {
                </AccordionDetails>
                
              </Accordion>
-             {/* --------- */}
+            
              <Accordion>
                
                <AccordionSummary
@@ -420,7 +424,7 @@ export const Product=()=> {
                  </Typography>
                </AccordionDetails>
              </Accordion>
-             {/* ----------- */}
+            
 
       <Accordion>
         <AccordionSummary
@@ -446,7 +450,7 @@ export const Product=()=> {
         >
           <Typography>Disabled Accordion</Typography>
         </AccordionSummary>
-      </Accordion>
+      </Accordion> */}
 
  
 
