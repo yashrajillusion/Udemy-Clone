@@ -30,6 +30,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Header } from '../Header/Header';
 
 
 
@@ -42,6 +43,7 @@ export const Product=()=> {
 
   return (
     <div>
+      <Header/>
        <div className='BlackBox'>
           <div className='BBText'>
           <div className='flex purpal'>
