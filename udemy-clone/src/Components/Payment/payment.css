@@ -1,0 +1,199 @@
+.App {
+    font-family: sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-size: 15px;
+    line-height: 1.43;
+    color: #1c1d1f;
+    margin-left: 30px;
+  }
+  .payment_header {
+    height: 120px;
+    /* border: 1px solid black; */
+    display: flex;
+  }
+  img {
+    width: 120px;
+    height: 120px;
+  }
+  #cancel_button {
+     border: none;
+     color: blue;
+     cursor: pointer;
+     background: transparent;
+     font-weight: 700;
+     margin-left: 1000px;
+  }
+  .payment_form_details {
+    display: flex;
+    height: 800px;
+    /* border: 1px dashed black; */
+  }
+  .checkbox_payment {
+    margin-top: 15px;
+  }
+  
+  #checkbox_payment {
+    cursor: pointer;
+    background-color: black;
+  
+  }
+  /* =================right part============================== */
+  .form_right {
+    width: 700px;
+    margin-left: 80px;
+    /* border: 1px solid red; */
+  }
+  .selectplace {
+    display: flex;
+  }
+  .select_country {
+    height: 50px;
+    width: 300px;
+  }
+  .select_state {
+    height: 50px;
+    width: 300px;
+    margin-left: 10px;
+  }
+  /* --------------------------------------------------- */
+  .payment_options {
+     width: 630px;
+  }
+  .creditcard_option {
+    height: 50px;
+    border: 1px solid #e0dcdc;
+    margin-top: 15px;
+  }
+  .input_radio {
+     margin-left: 15px;
+     height: 20px;
+     width: 20px;
+     cursor: pointer;
+  }
+  .radio_span {
+    margin-left: 10px;
+    color: #1c1d1f;
+    font-weight: 700;
+  }
+  .payment_span_images {
+    margin-left: 160px;
+  }
+  .payment_span_images img {
+      width: 40px;
+      height: 35px;
+      margin-left: 3px;
+       margin-top: 5px;
+       border-radius: 5px;
+      border: 1px solid #e0dcdc;
+  }
+  .images_pay img {
+    margin-left: 330px;
+  }
+  .images_pay1 img {
+    margin-left: 310px;
+  }
+  .images_pay2 img {
+    margin-left: 270px;
+  }
+  /* ================================================================ */
+  .card_detailsDiv {
+    border: 1px solid #e0dcdc;
+    height: 250px;
+    width: 600px;
+    padding: 15px;
+    margin-top: 15px;
+  }
+  
+  .input_cardname {
+    height: 50px;
+    width: 570px;
+    padding-left: 15px;
+    color: #1c1d1f;
+  }
+  .input_cardnum {
+    height: 50px;
+    width: 570px;
+    padding-left: 15px;
+    color: #1c1d1f;
+    margin-top: 15px;
+  }
+  .card_validity {
+    display: flex;
+    height: 50px;
+    margin-top: 15px;
+  }
+  .card_val_month {
+    width: 200px;
+    height: 50px;
+  
+  }
+  .card_val_year {
+    width: 200px;
+    height: 50px;
+  
+  }
+  .input_securitynumDiv {
+    width: 200px;
+  }
+  .input_securitynum {
+    margin-left: 15px;
+    height: 45px;
+  }
+  /* =============left part============================================================== */
+  .form_left {
+    width: 400px;
+    height: 320px;
+    padding: 15px;
+    box-shadow: 1px 1px 1px 3px #e0dcdc;
+  }
+  .course_price {
+    padding-left: 100px;
+  }
+  
+  #complete_payment {
+    color: #fff;
+    background-color: #a435f0;
+    border: 1px solid transparent;
+    font-weight: 700;
+      text-align: center;
+      vertical-align: middle;
+      touch-action: manipulation;
+      cursor: pointer;
+      width: 380px;
+      height: 50px;
+  }
+  .after_total {
+    font-size: 12px;
+  }
+  .terms_conditions {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .terms_conditions a {
+    text-decoration: none;
+  }
+  
+  .ordersummary  {
+     margin-left: 90px;
+     margin-top: 15px;
+     height: 140px;
+  }
+  .ordersummery_details {
+    display: flex;
+    margin-top: 15px;
+  }
+  .ordersummery_details img {
+    width: 35px;
+    height: 35px;
+  }
+  .ordersummery_details h4 {
+    margin-left: 15px;
+    margin-right: 40px;
+    vertical-align: text-top;
+  }
+  .order_course {
+    margin-top: -20px;
+  }
+  
+  
+  

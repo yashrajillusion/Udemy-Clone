@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "./header.css";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -8,9 +8,31 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import Avatar from "@mui/material/Avatar";
 import { deepPurple } from "@mui/material/colors";
 import Badge from "@mui/material/Badge";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { auth } from "../../Redux/login/action";
+import { addToCart } from "../../Redux/cart/action";
 export const Header = () => {
-  const [login, setLogin] = useState(true);
+  const { cart } = useSelector((store) => store.cart);
+  const { user } = useSelector((store) => store.auth);
+  const { wishlist } = useSelector((store) => store.wishlist);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (user.user == null) {
+      let token = JSON.parse(localStorage.getItem("token")) || null;
+      if (token != null) {
+        dispatch(auth(token));
+        axios
+          .get(`http://localhost:8080/cart/${token?.user?._id}`)
+          .then(({ data }) => {
+            dispatch(addToCart(data.length));
+          });
+      }
+    }
+  }, []);
+
   return (
     <>
       <header>
@@ -43,7 +65,7 @@ export const Header = () => {
               <span className="nav-span">Teach on Udemy</span>
             </Link>
           </div>
-          {login ? (
+          {user?.user != null ? (
             <div>
               <Link className="linkstyle" to={"#"}>
                 <span className="nav-span">My learning</span>
@@ -53,7 +75,7 @@ export const Header = () => {
             ""
           )}
           {/* testing */}
-          {login ? (
+          {user?.user != null ? (
             <div>
               <Link to={"#"}>
                 <button className="cart">
@@ -67,17 +89,17 @@ export const Header = () => {
           <div>
             <Link to={"#"}>
               <button className="cart">
-                <Badge color="secondary" badgeContent={5}>
+                <Badge color="secondary" badgeContent={cart || 0}>
                   <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
                 </Badge>
               </button>
             </Link>
           </div>
-          {login ? (
+          {user?.user != null ? (
             <div>
               <Link to={"#"}>
                 <button className="cart">
-                  <Badge color="secondary" badgeContent={10}>
+                  <Badge color="secondary" badgeContent={0}>
                     <NotificationsNoneOutlinedIcon></NotificationsNoneOutlinedIcon>
                   </Badge>
                 </button>
@@ -86,7 +108,7 @@ export const Header = () => {
           ) : (
             ""
           )}
-          {login ? (
+          {user?.user != null ? (
             <div>
               <Link to={"#"}>
                 <button className="cart">
@@ -96,7 +118,11 @@ export const Header = () => {
                     badgeContent=" "
                     variant="dot"
                   >
-                    <Avatar sx={{ bgcolor: deepPurple[500] }}>Y</Avatar>
+                    <Avatar sx={{ bgcolor: deepPurple[500] }}>
+                      {user.user != null
+                        ? user.user?.name[0].toUpperCase()
+                        : null}
+                    </Avatar>
                   </Badge>
                 </button>
               </Link>
@@ -106,7 +132,7 @@ export const Header = () => {
           )}
           {/* testing */}
 
-          {login ? (
+          {user?.user != null ? (
             ""
           ) : (
             <div>
@@ -115,7 +141,7 @@ export const Header = () => {
               </Link>
             </div>
           )}
-          {login ? (
+          {user?.user != null ? (
             ""
           ) : (
             <div>
@@ -124,7 +150,7 @@ export const Header = () => {
               </Link>
             </div>
           )}
-          {login ? (
+          {user?.user != null ? (
             ""
           ) : (
             <div>
