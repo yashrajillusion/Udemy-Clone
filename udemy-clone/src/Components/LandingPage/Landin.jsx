@@ -32,7 +32,7 @@ const Banner = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
-      .get("https://udemy-db.herokuapp.com/courses")
+      .get("https://udemysever.herokuapp.com/courses")
       .then(({ data }) => {
         // console.log(data);
         loading.current = false;

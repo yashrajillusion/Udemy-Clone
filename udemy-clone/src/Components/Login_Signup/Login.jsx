@@ -61,7 +61,7 @@ const Login = () => {
           {/* <button id="login_input">Log in</button> */}
           <ColorButton
             onClick={() => {
-              const URL = "http://localhost:8080/join/login-popup";
+              const URL = "https://udemysever.herokuapp.com/join/login-popup";
               dispatch(authFunction(userdata, URL));
             }}
             id="login_input"

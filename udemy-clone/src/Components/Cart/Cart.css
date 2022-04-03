@@ -243,7 +243,12 @@ button:hover{
     margin-top: -0.45rem;
 }
 
+.cart-loader{
+    position: fixed;
+    top: 50%;
+    left: 50%;
 
+}
 
  
 

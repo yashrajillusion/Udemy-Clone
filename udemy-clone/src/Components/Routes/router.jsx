@@ -5,6 +5,7 @@ import { Landigpage } from "../LandingPage/Landin";
 import Login from "../Login_Signup/Login";
 import Signup from "../Login_Signup/Signup";
 import Payment from "../Payment/Payment";
+import { Product } from "../Product/Product";
 import Wishlist from "../Wishlist/Wishlist";
 
 export const AllRoutes = () => {
@@ -13,6 +14,8 @@ export const AllRoutes = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Landigpage />}></Route>
+        <Route path="/courses/:id" element={<Product />}></Route>
+
         <Route path="/cart" element={<CartPage />}></Route>
         <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route path="/payment" element={<Payment />}></Route>

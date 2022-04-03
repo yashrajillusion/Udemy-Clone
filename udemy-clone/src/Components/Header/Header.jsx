@@ -25,7 +25,7 @@ export const Header = () => {
       if (token != null) {
         dispatch(auth(token));
         axios
-          .get(`http://localhost:8080/cart/${token?.user?._id}`)
+          .get(`https://udemysever.herokuapp.com/cart/${token?.user?._id}`)
           .then(({ data }) => {
             dispatch(addToCart(data.length));
           });
@@ -77,7 +77,7 @@ export const Header = () => {
           {/* testing */}
           {user?.user != null ? (
             <div>
-              <Link to={"#"}>
+              <Link to={"/wishlist"}>
                 <button className="cart">
                   <FavoriteBorderOutlinedIcon></FavoriteBorderOutlinedIcon>
                 </button>
@@ -87,7 +87,7 @@ export const Header = () => {
             ""
           )}
           <div>
-            <Link to={"#"}>
+            <Link to={"/cart"}>
               <button className="cart">
                 <Badge color="secondary" badgeContent={cart || 0}>
                   <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
