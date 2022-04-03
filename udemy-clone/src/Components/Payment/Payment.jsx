@@ -7,7 +7,7 @@ const payment = () => {
           
           <div classname = "payment_header">
          
-         <div><img src = "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"></img>   </div>
+         <div className = "header_img"><img src = "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"></img>   </div>
 
           {/* <div> <button id = "cancel_button">Cancel</button>   </div>       */}
       </div>
