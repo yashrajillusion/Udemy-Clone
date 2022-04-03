@@ -13,7 +13,7 @@ const initState = {
 export const wishlistReducer = (store = initState, { type, payload }) => {
   switch (type) {
     case ADDTOWISHLIST:
-      return { ...store, wishlist: [...store.wishlist, payload] };
+      return { ...store, wishlist: payload };
     case ADDTOWISHLIST_LOADING:
       return { ...store, wishlistloading: payload };
     case ADDTOWISHLIST_ERROR:

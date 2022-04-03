@@ -12,7 +12,6 @@ const verifyToken = (token) => {
 
 const authenticate = async (req, res, next) => {
   const cookieHeader = req.headers?.cookie;
-  console.log(req.headers.cookie);
   if (!cookieHeader)
     return res.status(200).send({ auth: false, message: "Please login" });
   let token = cookieHeader.split("=")[1];

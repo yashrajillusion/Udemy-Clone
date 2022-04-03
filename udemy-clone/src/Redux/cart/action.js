@@ -18,7 +18,7 @@ export const addToCartFunction = (data, URL) => (dispatch) => {
   axios
     .post(URL, data)
     .then(({ data }) => {
-      dispatch(addToCart(data));
+      dispatch(addToCart(1));
       dispatch(addToCartLoading(false));
       dispatch(addToCartError(false));
       console.log(data);

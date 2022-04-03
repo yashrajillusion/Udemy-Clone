@@ -34,7 +34,7 @@ const Banner = () => {
     axios
       .get("https://udemy-db.herokuapp.com/courses")
       .then(({ data }) => {
-        console.log(data);
+        // console.log(data);
         loading.current = false;
         setProducts([...data]);
       })
