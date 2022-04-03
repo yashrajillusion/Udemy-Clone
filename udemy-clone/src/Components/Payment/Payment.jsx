@@ -4,6 +4,21 @@ import "./payment.css";
 const Payment = () => {
   return (
     <div>
+          
+          <div classname = "payment_header">
+         
+         <div className = "header_img"><img src = "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"></img>   </div>
+
+          {/* <div> <button id = "cancel_button">Cancel</button>   </div>       */}
+      </div>
+      
+      <div className = "payment_form_details">
+     {/* right part------------------------------------------ */}
+      <div className = "form_right">
+        <h1>Checkout</h1>
+        <p>Billing Address</p>
+          <div className='selectplace'>
+              <div className='select_country'>
       <div className="payment_form_details">
         {/* right part------------------------------------------ */}
         <div className="form_right">

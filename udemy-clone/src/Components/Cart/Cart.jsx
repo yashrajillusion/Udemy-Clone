@@ -137,7 +137,7 @@ const CartProdCard = ({ db }) => {
             <button> Move to Wishlist</button>
           </div>
         </div>
-        <div className="price">
+        <div className="cart-price">
           <h3>₹{price}</h3>
           <LocalOfferIcon className="icon-tag" />
         </div>
