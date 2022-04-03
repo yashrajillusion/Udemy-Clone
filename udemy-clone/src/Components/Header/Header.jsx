@@ -136,7 +136,7 @@ export const Header = () => {
             ""
           ) : (
             <div>
-              <Link to={"#"}>
+              <Link to={"/join/login-popup"}>
                 <button className="login">Log in</button>
               </Link>
             </div>
@@ -145,7 +145,7 @@ export const Header = () => {
             ""
           ) : (
             <div>
-              <Link to={"#"}>
+              <Link to={"/join/signup-popup"}>
                 <button className="signup">Sign up</button>
               </Link>
             </div>
