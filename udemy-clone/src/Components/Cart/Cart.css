@@ -89,7 +89,7 @@ button:hover{
     margin-top: 0.8rem;
    
  }
-.price{
+.cart-price{
     text-align: right;
     display: flex;
     justify-content: end;
