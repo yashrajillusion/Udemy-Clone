@@ -23,7 +23,7 @@ export const AllRoutes = () => {
         <Route path="/join/signup-popup" element={<Signup />}></Route>
         <Route path="/join/login-popup" element={<Login />}></Route>
       </Routes>
-      <Bottombar />
+      {/* <Bottombar /> */}
     </>
   );
 };
