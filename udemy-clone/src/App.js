@@ -1,22 +1,12 @@
-import logo from "./logo.svg";
-import "./App.css";
-// import { Landigpage } from "./Components/LandingPage/Landin";
-// import Payment from "./Components/Payment/Payment";
-// import Login from "./Components/Login_Signup/Login";
-// import Signup from "./Components/Login_Signup/Signup";
-
-import Wishlist from "./Components/Wishlist/Wishlist";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { AllRoutes } from "./Components/Routes/router";
 function App() {
   return (
-    <div className="App">
-      {/* <Landigpage /> */}
-      {/* <Payment /> */}
-      <Wishlist />
-      {/* <Login /> */}
-      {/* <Signup /> */}
+    <div>
+      <AllRoutes />
     </div>
   );
 }
-
 export default App;
+
