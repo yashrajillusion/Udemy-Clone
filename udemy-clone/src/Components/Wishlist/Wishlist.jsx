@@ -1,6 +1,8 @@
 import React from 'react';
 import "./wishlist.css";
 import {Header} from "../Header/Header";
+import {ProdCard} from "../ProdCard/ProdCard";
+import "../ProdCard/prod.css";
 
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
@@ -39,13 +41,11 @@ const Wishlist = () => {
 </div>
 
 <div id="mylists" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
+ 
 </div>
 
 <div id="wishlist" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
+   
 </div>
 
 
@@ -72,8 +72,9 @@ const Wishlist = () => {
       <TextField id="outlined-basic" label="Search my cources" variant="outlined"/>
         
     </Box>
-
-   
+     
+     <ProdCard />
+       
     </div>
 
   )
