@@ -3,6 +3,13 @@
   width: 14.2rem;
   height: auto;
 }
+.prodLink{
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+ width: auto;
+ height: auto;
+}
 .prodimg {
   max-width: 100%;
 }

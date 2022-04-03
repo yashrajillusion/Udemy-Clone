@@ -47,9 +47,7 @@
       margin-top: 15px;
       margin-bottom: 25px;
   }
-  #signup_input:hover {
-      background-color: blue;
-  }
+  
   .hv_account {
       margin-left: 40px;
   }
@@ -58,4 +56,14 @@
   }
   .signup_checkbox {
       margin-right: 10px;
+  }
+  .alert{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+  }
+  .alert p{
+      margin: 0px;
+      padding: 0px;
   }
