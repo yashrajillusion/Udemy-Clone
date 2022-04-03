@@ -3,77 +3,48 @@ import Rating from "@mui/material/Rating";
 import "./prod.css";
 import React from "react";
 import { MultiItemCarousel } from "../MultiCarousel/MultiItemCarousel";
+import { LightTooltip } from "../LandingPage/Landin";
+import { PopperCard } from "./popperprodcard";
 // export const PopperCard = React.forwardRef(function PopperCard(props, ref) {
 
 export const ProdCard = React.forwardRef(function ProdCard(props, ref) {
   //  Spread the props to the underlying DOM element.
 
   return (
-    <div {...props} ref={ref} className="prodcard">
-      <img
-        className="prodimg"
-        src="https://img-c.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
-        alt=""
-      />
-      <h3 className="card-title">
-        <Link to={"#"}>
-          Learn Python: The Complete Python Programming Course
-        </Link>
-      </h3>
-      <div className="author">Avinash Jain, The Codex</div>
-      <div className="rating-div">
-        <span className="rate-num">4.3</span>
-        <Rating
-          name="read-only"
-          size="small"
-          precision={0.5}
-          value={4.5}
-          readOnly
-        />
-        <span className="rate-count">(1200)</span>
+    <Link
+      style={{ height: "auto" }}
+      className="prodLink"
+      to={`/courses/${props.data?._id}`}
+    >
+      <div {...props} ref={ref} className="prodcard">
+        {/* <Link to="#"> */}
+        <img className="prodimg" src={props.data?.image} alt="" />
+        <h3 className="card-title">
+          {/* <Link to={`/courses/${props.data?._id}`}>{props.data?.title}</Link> */}
+          {props.data?.title}
+        </h3>
+        <div className="author">{props.data?.author}</div>
+        <div className="rating-div">
+          <span className="rate-num">{props.data?.rating || 4.3}</span>
+          <Rating
+            name="read-only"
+            size="small"
+            precision={0.5}
+            value={props.data?.rating || 4.3}
+            readOnly
+          />
+          <span className="rate-count">(1200)</span>
+        </div>
+        <div className="price-bar">
+          <span className="price">₹{props.data?.price}</span>
+          <span className="oldprice">₹{+props.data?.price + 1000}</span>
+        </div>
+        {/* </Link> */}
       </div>
-      <div className="price-bar">
-        <span className="price">₹455</span>
-        <span className="oldprice">₹655</span>
-      </div>
-    </div>
+    </Link>
   );
 });
 
-/*
-export const ProdCard = () => {
-  return (
-    <div className="prodcard">
-      <img
-        className="prodimg"
-        src="https://img-c.udemycdn.com/course/240x135/394676_ce3d_5.jpg"
-        alt=""
-      />
-      <h3 className="card-title">
-        <Link to={"#"}>
-          Learn Python: The Complete Python Programming Course
-        </Link>
-      </h3>
-      <div className="author">Avinash Jain, The Codex</div>
-      <div className="rating-div">
-        <span className="rate-num">4.3</span>
-        <Rating
-          name="read-only"
-          size="small"
-          precision={0.5}
-          value={4.5}
-          readOnly
-        />
-        <span className="rate-count">(1200)</span>
-      </div>
-      <div className="price-bar">
-        <span className="price">₹455</span>
-        <span className="oldprice">₹655</span>
-      </div>
-    </div>
-  );
-};
-*/
 export const TechCard = () => {
   return (
     <div className="tec-cont">
@@ -150,21 +121,24 @@ export const TechCard = () => {
   );
 };
 
-export const SuggestionCard = () => {
+export const SuggestionCard = ({ title, data, category }) => {
+  let products = data.filter((el) => el.category === category);
+
   return (
     <div className="tec-cont">
       <div>
-        <h2>Students are viewing</h2>
+        <h2>{title}</h2>
         <div className="prod-cont">
-          {/* <MultiItemCarousel>  */}
-          <ProdCard />
-          <ProdCard />
-          <ProdCard />
-          <ProdCard />
-          <ProdCard />
-          <ProdCard />
-          <ProdCard />
-          <ProdCard />
+          {/* <MultiItemCarousel> Students are viewing */}
+          {products.map((el) => (
+            <LightTooltip
+              arrow
+              placement="right"
+              title={<PopperCard data={el} />}
+            >
+              <ProdCard data={el} />
+            </LightTooltip>
+          ))}
           {/* </MultiItemCarousel> */}
         </div>
       </div>

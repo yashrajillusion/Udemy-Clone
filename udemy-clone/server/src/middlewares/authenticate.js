@@ -12,13 +12,17 @@ const verifyToken = (token) => {
 
 const authenticate = async (req, res, next) => {
   const cookieHeader = req.headers?.cookie;
-  if (!cookieHeader) return res.status(200).send({ message: "Please login" });
+  console.log(req.headers.cookie);
+  if (!cookieHeader)
+    return res.status(200).send({ auth: false, message: "Please login" });
   let token = cookieHeader.split("=")[1];
   let user;
   try {
     user = await verifyToken(token);
   } catch (error) {
-    return res.status(500).send({ message: "Authorization token invalid" });
+    return res
+      .status(500)
+      .send({ auth: false, message: "Authorization token invalid" });
   }
   req.user = user.user;
   return next();

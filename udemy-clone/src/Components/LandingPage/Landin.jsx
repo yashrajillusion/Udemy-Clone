@@ -7,8 +7,10 @@ import { PopperCard } from "../ProdCard/popperprodcard";
 import { styled } from "@mui/material/styles";
 import { nanoid } from "nanoid";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
-
-const LightTooltip = styled(({ className, ...props }) => (
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
+import Skeleton from "@mui/material/Skeleton";
+export const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
@@ -25,6 +27,21 @@ export const Landigpage = () => {
 };
 
 const Banner = () => {
+  // const [loading, setLoading] = useState(true);
+  const loading = useRef(true);
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://udemy-db.herokuapp.com/courses")
+      .then(({ data }) => {
+        console.log(data);
+        loading.current = false;
+        setProducts([...data]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <>
       <section>
@@ -43,248 +60,259 @@ const Banner = () => {
           </div>
         </div>
       </section>
-      <section>
-        <div className="headline">
-          <div className="headline_main-text">A broad selection of courses</div>
-          <div className="headline_sub-text">
-            Choose from 183,000 online video courses with new additions
-            published every month
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="data-comp">
-          <div className="data-cont">
-            <div className="topic-btn">
-              <button>
-                <span>Python</span>
-              </button>
-              <button>
-                <span>Excel</span>
-              </button>
-              <button>
-                <span>Web Development</span>
-              </button>
-              <button>
-                <span>JavaScrip</span>
-              </button>
-              <button>
-                <span>Data Science</span>
-              </button>
-              <button>
-                <span>AWS Certification</span>
-              </button>
-              <button>
-                <span>AWS Certification</span>
-              </button>
-              <button>
-                <span>Drawing</span>
-              </button>
-            </div>
-            <div className="skill-hub">
-              <div className="skill-desc">
-                <h2>Expand your career opportunities with Python</h2>
-                <p>
-                  Take one of Udemy’s range of Python courses and learn how to
-                  code using this incredibly useful language. Its simple syntax
-                  and readability makes Python perfect for Flask, Django, data
-                  science, and machine learning. You’ll learn how to build
-                  everything from games to sites to apps. Choose from a range of
-                  courses that will appeal to both beginners and advanced
-                  developers alike.
-                </p>
-                <Link to={"#"}>
-                  <span>Explore Python</span>
-                </Link>
+
+      {loading.current ? (
+        <>
+          <SkeltonLoading />
+          <SkeltonLoading />
+        </>
+      ) : (
+        <>
+          <section>
+            <div className="headline">
+              <div className="headline_main-text">
+                A broad selection of courses
               </div>
-              <div className="prod-cont">
-                <LightTooltip arrow placement="right" title={<PopperCard />}>
-                  <ProdCard />
-                </LightTooltip>
-
-                <LightTooltip arrow placement="right" title={<PopperCard />}>
-                  <ProdCard />
-                </LightTooltip>
-
-                <LightTooltip arrow placement="right" title={<PopperCard />}>
-                  <ProdCard />
-                </LightTooltip>
-
-                <LightTooltip arrow placement="right" title={<PopperCard />}>
-                  <ProdCard />
-                </LightTooltip>
-
-                <LightTooltip arrow placement="right" title={<PopperCard />}>
-                  <ProdCard />
-                </LightTooltip>
+              <div className="headline_sub-text">
+                Choose from 183,000 online video courses with new additions
+                published every month
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <SuggestionCard />
-      </section>
-
-      <section>
-        <TechCard />
-      </section>
-      <section>
-        <div className="featured">
-          <div className="feature-cont">
-            <h2>Featured topic by category</h2>
-            <div>
-              <div>
-                <h3>Development</h3>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
+          </section>
+          <section>
+            <div className="data-comp">
+              <div className="data-cont">
+                <div className="topic-btn">
+                  <button>
+                    <span>Python</span>
+                  </button>
+                  <button>
+                    <span>Excel</span>
+                  </button>
+                  <button>
+                    <span>Web Development</span>
+                  </button>
+                  <button>
+                    <span>JavaScrip</span>
+                  </button>
+                  <button>
+                    <span>Data Science</span>
+                  </button>
+                  <button>
+                    <span>AWS Certification</span>
+                  </button>
+                  <button>
+                    <span>AWS Certification</span>
+                  </button>
+                  <button>
+                    <span>Drawing</span>
+                  </button>
                 </div>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
-                </div>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
-                </div>
-              </div>
-              <div>
-                <h3>Development</h3>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
-                </div>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
-                </div>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
-                </div>
-              </div>
-              <div>
-                <h3>Development</h3>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
-                </div>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
-                </div>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
-                </div>
-              </div>
-              <div>
-                <h3>Development</h3>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
-                </div>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
-                </div>
-                <div className="topic">
-                  <Link className="trendlink" to={"#"}>
-                    Python
-                  </Link>
-                  <span>34,280,976 students</span>
+                <div className="skill-hub">
+                  <div className="skill-desc">
+                    <h2>Expand your career opportunities with Python</h2>
+                    <p>
+                      Take one of Udemy’s range of Python courses and learn how
+                      to code using this incredibly useful language. Its simple
+                      syntax and readability makes Python perfect for Flask,
+                      Django, data science, and machine learning. You’ll learn
+                      how to build everything from games to sites to apps.
+                      Choose from a range of courses that will appeal to both
+                      beginners and advanced developers alike.
+                    </p>
+                    <Link className="skill-titl-btn" to={"#"}>
+                      <span>Explore Python</span>
+                    </Link>
+                  </div>
+                  <div className="prod-cont">
+                    {products.map((el) => (
+                      <LightTooltip
+                        arrow
+                        placement="right"
+                        title={<PopperCard data={el} />}
+                      >
+                        <ProdCard data={el} />
+                      </LightTooltip>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-            <a className="com-btn" href="/">
-              <span>Explore more topics</span>
-            </a>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="poster1">
-          <div className="poster-cont">
-            <img
-              className="banner-2"
-              src="https://s.udemycdn.com/home/non-student-cta/instructor-1x-v3.jpg"
-              alt=""
+          </section>
+          <section>
+            <SuggestionCard
+              title={"Popular for advancing Web Developers"}
+              data={products}
+              category={"It & Software"}
             />
-            <div>
-              <PitchCard
-                title={"Become an instructor"}
-                des={
-                  "Instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love."
-                }
-                btn={"Start teaching today"}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="partner">
-          <Patner />
-        </div>
-      </section>
-      <section>
-        <div className="poster1">
-          <div className="poster-cont">
-            <div>
-              <PitchCard2 />
-            </div>
-            <img
-              className="banner-2"
-              src="https://s.udemycdn.com/home/non-student-cta/ub-1x-v3.jpg"
-              alt=""
+            <SuggestionCard
+              title={"Popul in Marketing"}
+              data={products}
+              category={"Marketing"}
             />
-          </div>
-        </div>
-      </section>
-      <section>
-        <div className="poster1">
-          <div className="poster-cont">
-            <img
-              className="banner-2"
-              src="https://s.udemycdn.com/home/non-student-cta/transform-1x-v3.jpg"
-              alt=""
-            />
-            <div>
-              <PitchCard
-                title={"Transform your life through education"}
-                des={
-                  "Learners around the world are launching new careers, advancing in their fields, and enriching their lives."
-                }
-                btn={"Find out how"}
-              />
+          </section>
+
+          <section>
+            <TechCard />
+          </section>
+          <section>
+            <div className="featured">
+              <div className="feature-cont">
+                <h2>Featured topic by category</h2>
+                <div>
+                  <div>
+                    <h3>Development</h3>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h3>Development</h3>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h3>Development</h3>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h3>Development</h3>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                    <div className="topic">
+                      <Link className="trendlink" to={"#"}>
+                        Python
+                      </Link>
+                      <span>34,280,976 students</span>
+                    </div>
+                  </div>
+                </div>
+                <a className="com-btn" href="/">
+                  <span>Explore more topics</span>
+                </a>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section></section>
+          </section>
+          <section>
+            <div className="poster1">
+              <div className="poster-cont">
+                <img
+                  className="banner-2"
+                  src="https://s.udemycdn.com/home/non-student-cta/instructor-1x-v3.jpg"
+                  alt=""
+                />
+                <div>
+                  <PitchCard
+                    title={"Become an instructor"}
+                    des={
+                      "Instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love."
+                    }
+                    btn={"Start teaching today"}
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div className="partner">
+              <Patner />
+            </div>
+          </section>
+          <section>
+            <div className="poster1">
+              <div className="poster-cont">
+                <div>
+                  <PitchCard2 />
+                </div>
+                <img
+                  className="banner-2"
+                  src="https://s.udemycdn.com/home/non-student-cta/ub-1x-v3.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </section>
+          <section>
+            <div className="poster1">
+              <div className="poster-cont">
+                <img
+                  className="banner-2"
+                  src="https://s.udemycdn.com/home/non-student-cta/transform-1x-v3.jpg"
+                  alt=""
+                />
+                <div>
+                  <PitchCard
+                    title={"Transform your life through education"}
+                    des={
+                      "Learners around the world are launching new careers, advancing in their fields, and enriching their lives."
+                    }
+                    btn={"Find out how"}
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section></section>
+        </>
+      )}
     </>
   );
 };
@@ -353,5 +381,36 @@ const Patner = () => {
         />
       </div>
     </div>
+  );
+};
+
+const SkeltonLoading = () => {
+  return (
+    <>
+      <div className="skelton">
+        <Skeleton className="line" variant="text" animation="wave" />
+        <div className="midskel">
+          <Skeleton
+            className="rectangel"
+            variant="rectangular"
+            width={50}
+            height={50}
+          />
+          <div>
+            <Part />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+const Part = () => {
+  return (
+    <>
+      <Skeleton variant="text" className="wave" animation="wave" />
+      <Skeleton variant="text" className="wave" animation="wave" />
+      <Skeleton variant="text" className="wave" animation="wave" />
+      <Skeleton variant="text" className="wave" animation="wave" />
+    </>
   );
 };

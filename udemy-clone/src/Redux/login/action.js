@@ -20,6 +20,8 @@ export const authFunction = (data, URL) => (dispatch) => {
       dispatch(authLoading(false));
       dispatch(autheError(false));
       console.log(data);
+      document.cookie = `Bearer=${data.token}`;
+      localStorage.setItem("token", JSON.stringify(data));
     })
     .catch((err) => {
       console.log(err.message);
