@@ -6,13 +6,27 @@ import Button from "@mui/material/Button";
 import { purple } from "@mui/material/colors";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import React from "react";
+import Alert from "@mui/material/Alert";
+import CircularProgress from "@mui/material/CircularProgress";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCartFunction } from "../../Redux/cart/action";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { addToWishlistFunction } from "../../Redux/wishlist/action";
 
-export const PopperCard = () => {
+export const PopperCard = ({ data }) => {
+  const { cart, loading, error } = useSelector((store) => store.cart);
+  const { wishlist, wishlistloading, wishlisterror } = useSelector(
+    (store) => store.wishlist
+  );
+  const { user } = useSelector((store) => store.auth);
+  console.log(cart, wishlist);
+  const dispatch = useDispatch();
+
   return (
     <div className="poppercard">
       <div>
         <Link className="p-title" to={"#"}>
-          The Data Analyst Course: Complete Data Analyst Bootcamp 2022
+          {data?.title}
         </Link>
       </div>
       <div className="p-date-con">
@@ -24,23 +38,55 @@ export const PopperCard = () => {
         <span>All Levels</span>
         <span className="p-sub">Subtitles</span>
       </div>
-      <div className="p-desc">
-        Complete Data Analyst Training: Python, NumPy, Pandas, Data Types, Data
-        Visualization
-      </div>
+      <div className="p-desc">{data?.description}</div>
       <div className="highlights">
-        {[
-          "The course resume with complete that provide all the things to become",
-          "The course resume with complete that provide all the things to become",
-          "The course resume with complete that provide all the things to become",
-        ].map((el) => (
+        {data?.details.map((el) => (
           <PoperPoint text={el} />
         ))}
       </div>
       <div className="p-btn-div">
-        <ColorButton>Add to cart</ColorButton>
-        <button className="heart-cir">
-          <FavoriteBorderOutlinedIcon fontSize="medium"></FavoriteBorderOutlinedIcon>
+        {error ? (
+          <Alert className="alert" severity="error">
+            <p>some thing went wrong</p>
+          </Alert>
+        ) : (
+          <ColorButton
+            onClick={() => {
+              const cartschema = {
+                userId: user?.user._id,
+                productId: data._id,
+              };
+              console.log(cartschema);
+              const URL = "http://localhost:8080/cart";
+              dispatch(addToCartFunction(cartschema, URL));
+            }}
+          >
+            {loading ? (
+              <CircularProgress style={{ color: "white" }} />
+            ) : (
+              "Add to cart"
+            )}
+          </ColorButton>
+        )}
+
+        <button
+          className="heart-cir"
+          onClick={() => {
+            const cartschema = {
+              userId: user?.user._id,
+              productId: data._id,
+            };
+            console.log(cartschema);
+            const URL = "http://localhost:8080/wishlist";
+            dispatch(addToWishlistFunction(cartschema, URL));
+          }}
+        >
+          {wishlistloading ? (
+            <CircularProgress style={{ color: "black" }} />
+          ) : (
+            <FavoriteBorderOutlinedIcon fontSize="medium" />
+            // <FavoriteIcon fontSize="medium" />
+          )}
         </button>
       </div>
     </div>
@@ -56,7 +102,7 @@ const PoperPoint = ({ text }) => {
   );
 };
 
-const ColorButton = styled(Button)(({ theme }) => ({
+export const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText(purple[500]),
   backgroundColor: "#a435f0",
   height: "2.8rem",

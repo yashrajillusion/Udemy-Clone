@@ -1,0 +1,250 @@
+body{
+    width: 100%;
+    font-family: sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+
+}
+button:hover{
+   cursor: pointer;
+}
+.cart-body{
+    height: max-content;
+}
+
+.main{
+    margin: auto;
+    margin-top: 0.4rem;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+.cart-items{
+    
+    width: 60%;
+}
+.total-div{
+   
+    width: 30%;
+}
+.total-price h1{
+    font-weight: 700;
+    font-size: 40px;
+}
+.btn{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin-top: 13%;
+    
+    
+}
+.add-remove-quant{
+    
+    width: 18%;
+}
+.add-remove-quant button{
+    border: transparent;
+    color: #a435f0;
+    background: transparent;
+    text-align: right;
+    margin-top: 3%;
+}
+
+
+.items-info{
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 105px;
+    
+    
+}
+
+
+
+.product-img {
+   height: 80%;
+   width: 20%;
+   
+}
+.product-img img{
+    height: 90%;
+    width: 90%;
+    padding: 3%;
+    margin-top: 0.4rem;
+}
+.title{
+    width: 52%;
+    height: 100%;
+
+    
+    
+}
+.title p{
+   font-weight: 400;
+   font-size: smaller;
+   color: #51494b;
+   margin-top: -1rem;
+}
+.title h4{
+    font-weight: 500;
+    margin-top: 0.8rem;
+   
+ }
+.price{
+    text-align: right;
+    display: flex;
+    justify-content: end;
+    width: 10%;
+    color: #a435f0;
+    margin-right: 1%;
+    font-size: smaller;
+}
+
+.checkOutButton button{
+    width: 65%;
+    height: 55px;
+    background-color: #a435f0;
+    color:white;
+    border-style: hidden;
+    font-size: medium;
+    font-weight: 400;
+    
+}
+.checkOutButton button:hover{
+    background-color: #6709a7;
+}
+.input{
+    height: 15px;
+    width: 45%;
+    padding: 2%;
+    text-transform: capitalize;
+    
+}
+.applybtn{
+    height: 37px;
+    width: 15%;
+    background-color: #a435f0;
+    color:white;
+    border-style: hidden;
+    font-size: medium;
+    font-weight: 400;
+}
+.applybtn:hover{
+    background-color: #6709a7;
+}
+.last-div{
+    width: 64%;
+    height: 100px;
+    border: 1px solid #d1d7dc;
+    margin-top: 0.7rem;
+
+}
+.last-div p{
+    margin-left: 0.4rem;
+    font-weight: 500;
+    font-size: medium;
+}
+
+
+.klarna{
+    height: 20px;
+    width: 20%;
+    margin-bottom: 4rem;
+    margin-left: 0.4rem;
+}
+.afterPay{
+    height: 30px;
+    width: 30%;
+    margin-bottom: 3.5rem;
+    margin-left: 0.4rem;
+}
+
+.wishlist-container{
+    
+    width: 55%;
+    margin-left: 10%;
+}
+.heading{
+    margin-left: 11%;
+    font-family: SuisseWorks,Georgia,Times,times new roman,serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.15;
+    letter-spacing: -.5px;
+}
+
+
+.rating{
+    display: flex;
+    align-items: center;
+    margin-left: 0.4rem;
+    size: 1px;
+    margin-top: -0.6rem;
+  }
+
+.rate-num {
+    margin-right: 0.2rem;
+    color: #b4690e;
+    font-weight: 400;
+    font-size: smaller;
+  }
+  .rate-count {
+    margin-left: 0.4rem;
+    color: gray;
+    font-size: 0.8rem;
+  }
+
+  .bestseller-div{
+      display: flex;
+  }
+
+  .bestseller-div button{
+      background-color: #eceb98;
+      border: transparent;
+      margin-top: -0.6rem;
+      
+  }
+  .list{
+      display: flex;
+      margin-left: -10px;
+      margin-top: 2px;
+      width: max-content;
+      color: grey;
+
+  }
+
+  .list li:first-child{
+      list-style:none;
+  }
+  .list li{
+      margin-right: 2rem;
+      font-size: smaller;
+      margin-left: -1rem;
+  }
+
+
+  .icon-tag{
+      margin-top: 11px;
+      
+  }
+  .promotion-div{
+      display: flex;
+  }
+
+  .promotion-div p span{
+      font-weight: 700;
+  }
+  .promotion-div p {
+    font-weight: lighter;
+    color: grey;
+    margin-top: -0.2rem;
+}
+
+.closeicon{
+    margin-top: -0.45rem;
+}
+
+
+
+ 
+
+  
