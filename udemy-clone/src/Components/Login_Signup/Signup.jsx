@@ -1,10 +1,10 @@
 import "./signup.css";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import PersonIcon from '@mui/icons-material/Person';
-import EmailIcon from '@mui/icons-material/Email';
-import LockIcon from '@mui/icons-material/Lock';
-import HelpIcon from '@mui/icons-material/Help';
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import PersonIcon from "@mui/icons-material/Person";
+import EmailIcon from "@mui/icons-material/Email";
+import LockIcon from "@mui/icons-material/Lock";
+import HelpIcon from "@mui/icons-material/Help";
 import { Checkbox } from "@mui/material";
 import React, { useState } from "react";
 import { Header } from "../Header/Header";
@@ -77,7 +77,7 @@ const Signup = () => {
           </button> */}
           <ColorButton
             onClick={() => {
-              const URL = "http://localhost:8080/join/signup-popup";
+              const URL = "https://udemysever.herokuapp.com/join/signup-popup";
               dispatch(authFunction(userdata, URL));
             }}
             id="signup_input"

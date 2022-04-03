@@ -5,7 +5,6 @@ import { ProdCard } from "../ProdCard/ProdCard";
 import "../ProdCard/prod.css";
 
 import PropTypes from "prop-types";
-import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
@@ -19,8 +18,6 @@ import IconButton from "@mui/material/IconButton";
 const Wishlist = () => {
   return (
     <div>
-      <Header />
-
       <div className="wishlistDiv">
         <div class="tab">
           <h1>My learning</h1>

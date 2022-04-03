@@ -19,7 +19,7 @@ export const CartPage = () => {
     const token = JSON.parse(localStorage.getItem("token"));
 
     axios
-      .get(`http://localhost:8080/cart/${token?.user?._id}`)
+      .get(`https://udemysever.herokuapp.com/cart/${token?.user?._id}`)
       .then(({ data }) => {
         loading.current = false;
         setData([...data]);
@@ -30,7 +30,7 @@ export const CartPage = () => {
     <>
       <h1 className="heading">Shopping Cart</h1>
       {loading.current ? (
-        <CircularProgress />
+        <CircularProgress size={"8rem"} className="cart-loader" />
       ) : (
         <div className="cart-body">
           <div className="main">
