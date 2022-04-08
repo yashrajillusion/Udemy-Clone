@@ -20,19 +20,20 @@ export const Header = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    let token = JSON.parse(localStorage.getItem("token")) || null;
     if (user.user == null) {
-      let token = JSON.parse(localStorage.getItem("token")) || null;
       if (token != null) {
         dispatch(auth(token));
-        axios
-          .get(`https://udemysever.herokuapp.com/cart/${token?.user?._id}`)
-          .then(({ data }) => {
-            dispatch(addToCart(data.length));
-          });
       }
     }
+    if (token != null)
+      axios
+        .get(`https://udemysever.herokuapp.com/cart/${token?.user?._id}`)
+        .then(({ data }) => {
+          console.log(data);
+          dispatch(addToCart(data.length));
+        });
   }, []);
-
   return (
     <>
       <header>
@@ -89,7 +90,7 @@ export const Header = () => {
           <div>
             <Link to={"/cart"}>
               <button className="cart">
-                <Badge color="secondary" badgeContent={cart || 0}>
+                <Badge color="secondary" badgeContent={cart}>
                   <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
                 </Badge>
               </button>

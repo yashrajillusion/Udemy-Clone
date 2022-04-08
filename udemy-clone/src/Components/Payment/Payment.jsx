@@ -1,8 +1,25 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./payment.css";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Payment = () => {
+  const [price, setPrice] = useState(0);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    let token = JSON.parse(localStorage.getItem("token")) || null;
+    if (token != null)
+      axios
+        .get(`https://udemysever.herokuapp.com/cart/${token?.user?._id}`)
+        .then(({ data }) => {
+          let total = 0;
+          data.map((el) => {
+            total += el.productId.price;
+          });
+          setPrice(total);
+        });
+  }, []);
   const navigate = useNavigate();
   return (
     <div>
@@ -174,7 +191,7 @@ const Payment = () => {
               <td>Original price:</td>
               <td>
                 <div>
-                  <span classname="course_price"> &#8377;3,499</span>
+                  <span classname="course_price"> &#8377;{price}</span>
                 </div>
               </td>
             </tr>
@@ -182,7 +199,7 @@ const Payment = () => {
               <td>Coupon discounts:</td>
               <td>
                 <div classname="course_price">
-                  <span> &#8377;3,044</span>
+                  <span> &#8377;{price * 0.1}</span>
                 </div>
               </td>
             </tr>
@@ -195,7 +212,7 @@ const Payment = () => {
                 <div classname="course_price">
                   <span>
                     {" "}
-                    <b>&#8377;455 </b>
+                    <b>&#8377;{price != 0 ? price - price * 0.1 : 0} </b>
                   </span>
                 </div>
               </td>
@@ -213,17 +230,22 @@ const Payment = () => {
             </span>
           </div>
 
-          <button
-            onClick={() => {
-              setTimeout(() => {
-                alert("Payment Succss");
-                navigate("/");
-              }, 2000);
-            }}
-            id="complete_payment"
-          >
-            Complete Payment
-          </button>
+          {loading ? (
+            <CircularProgress />
+          ) : (
+            <button
+              onClick={() => {
+                setLoading(true);
+                setTimeout(() => {
+                  alert("Payment Succss");
+                  navigate("/");
+                }, 2000);
+              }}
+              id="complete_payment"
+            >
+              Complete Payment
+            </button>
+          )}
         </div>
       </div>
 

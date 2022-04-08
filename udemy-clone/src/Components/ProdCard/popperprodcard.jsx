@@ -19,7 +19,7 @@ export const PopperCard = ({ data }) => {
     (store) => store.wishlist
   );
   const { user } = useSelector((store) => store.auth);
-  console.log(cart, wishlist);
+
   const dispatch = useDispatch();
 
   return (
