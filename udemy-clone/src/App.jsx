@@ -4,7 +4,7 @@ import { AllRoutes } from "./Components/Routes/router";
 
 export const App = () => {
   return (
-    <div>
+    <div className="main-cont">
       <AllRoutes />
     </div>
   );
