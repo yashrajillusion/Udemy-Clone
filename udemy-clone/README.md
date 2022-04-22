@@ -6,8 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 ## There is Two Directory 
-1. Server that contains backend code 
-2. Src it contains Frontend
+1. udemy-clone/src/server that contains backend code 
+2. udemy-clone/src it contains Frontend
 
 ### `npm start`
 
