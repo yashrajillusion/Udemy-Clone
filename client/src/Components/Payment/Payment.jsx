@@ -11,7 +11,7 @@ const Payment = () => {
     let token = JSON.parse(localStorage.getItem("token")) || null;
     if (token != null)
       axios
-        .get(`https://udemysever.herokuapp.com/cart/${token?.user?._id}`)
+        .get(`https://udemy-vr4p.onrender.com/cart/${token?.user?._id}`)
         .then(({ data }) => {
           let total = 0;
           data.map((el) => {

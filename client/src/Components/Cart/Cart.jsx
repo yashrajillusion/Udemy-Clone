@@ -19,7 +19,7 @@ export const CartPage = () => {
     const token = JSON.parse(localStorage.getItem("token"));
 
     axios
-      .get(`https://udemysever.herokuapp.com/cart/${token?.user?._id}`)
+      .get(`https://udemy-vr4p.onrender.com/cart/${token?.user?._id}`)
       .then(({ data }) => {
         loading.current = false;
         setData([...data]);

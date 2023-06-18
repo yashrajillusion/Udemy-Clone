@@ -57,7 +57,7 @@ export const PopperCard = ({ data }) => {
                 productId: data._id,
               };
               console.log(cartschema);
-              const URL = "https://udemysever.herokuapp.com/cart";
+              const URL = "https://udemy-vr4p.onrender.com/cart";
               dispatch(addToCartFunction(cartschema, URL));
             }}
           >
@@ -77,7 +77,7 @@ export const PopperCard = ({ data }) => {
               productId: data._id,
             };
             console.log(cartschema);
-            const URL = "https://udemysever.herokuapp.com/wishlist";
+            const URL = "https://udemy-vr4p.onrender.com/wishlist";
             dispatch(addToWishlistFunction(cartschema, URL));
           }}
         >

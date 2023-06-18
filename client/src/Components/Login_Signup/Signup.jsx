@@ -77,7 +77,7 @@ const Signup = () => {
           </button> */}
           <ColorButton
             onClick={() => {
-              const URL = "https://udemysever.herokuapp.com/join/signup-popup";
+              const URL = "https://udemy-vr4p.onrender.com/join/signup-popup";
               dispatch(authFunction(userdata, URL));
             }}
             id="signup_input"

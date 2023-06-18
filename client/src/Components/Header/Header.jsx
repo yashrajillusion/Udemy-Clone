@@ -28,7 +28,7 @@ export const Header = () => {
     }
     if (token != null)
       axios
-        .get(`https://udemysever.herokuapp.com/cart/${token?.user?._id}`)
+        .get(`https://udemy-vr4p.onrender.com/cart/${token?.user?._id}`)
         .then(({ data }) => {
           console.log(data);
           dispatch(addToCart(data.length));
